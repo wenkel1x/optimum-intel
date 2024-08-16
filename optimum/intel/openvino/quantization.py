@@ -802,6 +802,7 @@ def _weight_only_quantization(
     else:
         mode = CompressWeightsMode.INT4_SYM if config.sym else CompressWeightsMode.INT4_ASYM
 
+    mode = CompressWeightsMode.E2M1
     return nncf.compress_weights(
         model,
         mode=mode,
